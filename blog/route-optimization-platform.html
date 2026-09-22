@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Building a live fleet-tracking and route-optimization platform — Berke Göktuğ Sarılı</title>
+  <meta name="description" content="How I built a traffic-aware route optimization and live fleet tracking platform with React, Node.js, WebSocket and MapLibre." />
+  <meta name="author" content="Berke Göktuğ Sarılı" />
+  <meta name="theme-color" content="#f7f9fb" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)" />
+  <script>
+    (function () {
+      var s = localStorage.getItem("theme");
+      var t = s || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="../favicon.svg" />
+  <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+</head>
+<body>
+
+<a class="skip-link" href="#post">Skip to content</a>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="../index.html">berke<span>.sarili</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#experience">Experience</a></li>
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li><a href="../index.html#automation">Automation</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="index.html">Blog</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <div>
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">🌙</button>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+    </div>
+  </div>
+</nav>
+
+<article class="article" id="post">
+  <a class="back" href="index.html">← All posts</a>
+  <span class="date">August 2026 · ~6 min read</span>
+  <h1>Building a live fleet-tracking and route-optimization platform from scratch</h1>
+
+  <p>
+    At the facility where I work as an automation engineer, vehicles go out every day to collect
+    material from dozens of locations around the city. Routes were being planned by intuition,
+    nobody knew where a vehicle actually was at any given moment, and the people waiting for a
+    pickup had no idea when it would arrive. It was a classic logistics problem — and a great
+    excuse to build real software.
+  </p>
+  <p>
+    The result is a platform that is now part of daily operations: managers create collection jobs,
+    the system builds a traffic-aware route, every vehicle is tracked live on one map, and each
+    location automatically gets an SMS when the vehicle departs and again shortly before it arrives.
+    Here is a tour of the interesting engineering decisions.
+  </p>
+
+  <h2>A routing engine that refuses to die</h2>
+  <p>
+    The heart of the system is the routing engine. I wanted real road geometry and live traffic,
+    but I also wanted the platform to survive quota limits and provider outages — a lesson that
+    comes straight from industrial automation, where a single point of failure is never acceptable.
+    So routing runs through a fallback chain:
+  </p>
+  <ol>
+    <li><strong>TomTom</strong> — primary provider, with live traffic data and delay estimates;</li>
+    <li><strong>OpenRouteService</strong> — second in line;</li>
+    <li><strong>OSRM</strong> — public routing without traffic;</li>
+    <li><strong>Haversine estimate</strong> — the mathematical last resort, so the app always answers.</li>
+  </ol>
+  <p>
+    A daily quota guard sits in front of the primary provider: when usage approaches the free-tier
+    limit, the chain silently degrades to the next engine instead of failing. Stop ordering uses a
+    nearest-neighbour heuristic over a real road-distance matrix, and the system can generate one to
+    three alternative routes — like a navigation app — so the planner picks the trade-off between
+    fastest and shortest.
+  </p>
+
+  <h2>Live tracking without losing your mind</h2>
+  <p>
+    Drivers share their position from a phone; the backend fans it out over WebSocket to every open
+    map. Two details mattered far more than the happy path:
+  </p>
+  <ul>
+    <li>
+      <strong>Deviation detection.</strong> If consecutive GPS pings land far off the planned
+      geometry, the server automatically re-routes from the vehicle's <em>actual</em> position —
+      rate-limited so a GPS glitch doesn't trigger a re-route storm.
+    </li>
+    <li>
+      <strong>Map rendering discipline.</strong> The naive approach — redraw everything on every
+      ping — makes the map flicker and the camera jump. The final version updates line layers only
+      when geometry actually changes, moves markers instead of recreating them, and refits the
+      camera only when the set of visible data changes. Smooth, boring, correct.
+    </li>
+  </ul>
+
+  <h2>The SMS choreography</h2>
+  <p>
+    Each stop gets two messages: one when the vehicle departs, and one roughly thirty minutes
+    before arrival — computed from the live ETA, not a fixed schedule — containing a one-time
+    delivery code. The driver confirms the code on site and records what was collected, which feeds
+    a live fill-rate calculation for the vehicle. Departure is idempotent: pressing the button twice
+    never double-sends messages. In development, the whole SMS pipeline runs in simulation mode and
+    writes to a log table instead of sending — so the full flow is testable end to end without a
+    single real message.
+  </p>
+
+  <h2>What automation engineering taught me about software</h2>
+  <p>
+    Building PLC systems changes how you write web software. Three habits carried over directly:
+  </p>
+  <ul>
+    <li>
+      <strong>Assume the field is hostile.</strong> Sensors fail, networks drop, users double-press
+      buttons. Every critical endpoint is wrapped so one bad request — a foreign-key violation, a
+      malformed ping — can never take the whole server down.
+    </li>
+    <li>
+      <strong>State machines beat flags.</strong> Jobs and stops move through explicit states
+      (planned → en route → arrived → collected), exactly like a machine sequence. Debugging becomes
+      reading a state, not divining a combination of booleans.
+    </li>
+    <li>
+      <strong>Simulate before you commission.</strong> The platform includes a full driving
+      simulator that replays a route with realistic timing, fires the same API calls a real phone
+      would, and triggers the same SMS logic. We "commissioned" the software the way you commission
+      a machine — in simulation first.
+    </li>
+  </ul>
+
+  <h2>The stack</h2>
+  <p>
+    React + TypeScript + Vite on the front end, installable as a PWA so drivers use it like a native
+    app. MapLibre GL with OpenStreetMap tiles for the map. Node.js + Express + Prisma on the back
+    end, with WebSocket for live data, JWT-based roles (admin / manager / driver), and automatic
+    monthly report archiving. Nothing exotic — the value is in how the pieces are wired for
+    resilience.
+  </p>
+  <p>
+    If you're facing a similar logistics or plant-data problem, <a href="../index.html#contact">get
+    in touch</a> — I enjoy talking about this stuff.
+  </p>
+</article>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© <span id="year"></span> Berke Göktuğ Sarılı</span>
+    <span><a href="index.html">← all posts</a></span>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

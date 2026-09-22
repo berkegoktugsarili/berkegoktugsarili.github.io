@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Berke Göktuğ Sarılı — Automation Engineer</title>
+  <meta name="description" content="Berke Göktuğ Sarılı — Automation Engineer in Ankara. PLC programming, SCADA systems, industrial data and full-stack software for operations." />
+  <meta name="author" content="Berke Göktuğ Sarılı" />
+  <meta name="theme-color" content="#f7f9fb" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)" />
+  <link rel="canonical" href="https://berkegoktugsarili.github.io/" />
+  <!-- Open Graph (LinkedIn / social link previews) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Berke Göktuğ Sarılı" />
+  <meta property="og:title" content="Berke Göktuğ Sarılı — Automation Engineer" />
+  <meta property="og:description" content="Automation & SCADA engineer in Ankara. PLC programming, SCADA systems, industrial data and full-stack software — from waste-to-energy plants to live fleet-tracking platforms." />
+  <meta property="og:url" content="https://berkegoktugsarili.github.io/" />
+  <meta property="og:image" content="https://berkegoktugsarili.github.io/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Berke Göktuğ Sarılı — Automation Engineer" />
+  <meta name="twitter:description" content="Automation & SCADA engineer in Ankara — PLC, SCADA, industrial data & full-stack software." />
+  <meta name="twitter:image" content="https://berkegoktugsarili.github.io/og.png" />
+  <!-- JSON-LD: Person schema for Google / rich results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Berke Göktuğ Sarılı",
+    "jobTitle": "Automation & SCADA Engineer",
+    "url": "https://berkegoktugsarili.github.io/",
+    "email": "mailto:berkegoktugsarili@gmail.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Ankara", "addressCountry": "TR" },
+    "alumniOf": "Balıkesir University",
+    "knowsAbout": ["PLC programming", "SCADA", "WinCC", "KEPServerEX", "Industrial automation", "Biogas & H2S gas treatment", "Machine learning", "Full-stack development"],
+    "sameAs": [
+      "https://www.linkedin.com/in/berkegoktugsarili/",
+      "https://github.com/berkegoktugsarili"
+    ]
+  }
+  </script>
+  <!-- Set theme before first paint to avoid a flash of the wrong theme. -->
+  <script>
+    (function () {
+      var s = localStorage.getItem("theme");
+      var t = s || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="favicon.svg" />
+  <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+</head>
+<body>
+
+<a class="skip-link" href="#about">Skip to content</a>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="index.html">berke<span>.sarili</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#automation">Automation</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="blog/index.html">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div>
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">🌙</button>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <svg class="hero-grid-bg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <defs>
+      <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+        <path d="M 42 0 L 0 0 0 42" fill="none" stroke="var(--card-border)" stroke-width="1"/>
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#grid)" />
+  </svg>
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <span class="hero-kicker"><span class="dot"></span> Automation Engineer · Ankara, Türkiye</span>
+      <h1>Bridging <em>industrial automation</em> and modern software.</h1>
+      <p class="hero-sub">
+        I program PLCs, design SCADA systems and build full-stack applications that turn
+        plant-floor data into decisions — from waste-to-energy facilities to live fleet-tracking platforms.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#projects">See my work →</a>
+        <a class="btn btn-ghost" href="cv/Berke-Goktug-Sarili-CV.pdf" download>⬇ Download CV (PDF)</a>
+        <a class="btn btn-ghost" href="#contact">Get in touch</a>
+      </div>
+      <p class="hero-avail"><span class="dot"></span> Open to opportunities abroad · relocation-ready (Canada · Ireland · New Zealand)</p>
+      <div class="hero-stats">
+        <div class="stat"><b>3+ yrs</b><span>industrial automation</span></div>
+        <div class="stat"><b>63–1500 t</b><span>press machines commissioned</span></div>
+        <div class="stat"><b>2 apps</b><span>built &amp; running in production</span></div>
+        <div class="stat"><b>15 km</b><span>LoRaWAN PLC telemetry link</span></div>
+      </div>
+    </div>
+    <div class="hero-art">
+      <!-- Stylized control-room illustration: SCADA trend + route map -->
+      <svg viewBox="0 0 420 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a SCADA trend screen and a route map">
+        <rect x="10" y="14" width="400" height="230" rx="14" fill="var(--card)" stroke="var(--card-border)"/>
+        <rect x="10" y="14" width="400" height="34" rx="14" fill="var(--code-bg)"/>
+        <circle cx="32" cy="31" r="5" fill="#ef4444"/><circle cx="50" cy="31" r="5" fill="#f59e0b"/><circle cx="68" cy="31" r="5" fill="var(--accent)"/>
+        <text x="200" y="36" text-anchor="middle" font-family="monospace" font-size="12" fill="var(--text-faint)">SCADA · live trend</text>
+        <polyline points="30,190 70,170 110,178 150,140 190,150 230,110 270,122 310,88 350,96 390,70"
+                  fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <polyline points="30,205 70,200 110,208 150,188 190,196 230,172 270,180 310,158 350,166 390,148"
+                  fill="none" stroke="#0ea5e9" stroke-width="2" stroke-dasharray="5 5" opacity="0.8"/>
+        <g stroke="var(--card-border)" stroke-width="1">
+          <line x1="30" y1="70" x2="30" y2="220"/><line x1="30" y1="220" x2="395" y2="220"/>
+        </g>
+        <circle cx="230" cy="110" r="5" fill="var(--accent)"/>
+        <rect x="196" y="72" width="70" height="24" rx="6" fill="var(--accent-soft)" stroke="var(--accent)"/>
+        <text x="231" y="88" text-anchor="middle" font-family="monospace" font-size="11" fill="var(--accent-strong)">98.4 t/h</text>
+        <!-- route mini-map -->
+        <rect x="252" y="212" width="158" height="118" rx="12" fill="var(--card)" stroke="var(--card-border)"/>
+        <path d="M270 310 C 300 260, 330 300, 355 250 S 395 240, 396 232" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="270" cy="310" r="7" fill="var(--accent)"/>
+        <text x="270" y="314" text-anchor="middle" font-size="8" fill="#fff">D</text>
+        <circle cx="330" cy="283" r="5" fill="#0ea5e9"/>
+        <circle cx="355" cy="250" r="5" fill="#0ea5e9"/>
+        <circle cx="393" cy="234" r="5" fill="#f59e0b"/>
+        <text x="330" y="325" text-anchor="middle" font-family="monospace" font-size="10" fill="var(--text-faint)">live fleet map</text>
+        <!-- PLC rack -->
+        <rect x="10" y="252" width="228" height="78" rx="12" fill="var(--card)" stroke="var(--card-border)"/>
+        <rect x="24" y="266" width="34" height="50" rx="4" fill="var(--code-bg)" stroke="var(--card-border)"/>
+        <rect x="62" y="266" width="34" height="50" rx="4" fill="var(--code-bg)" stroke="var(--card-border)"/>
+        <rect x="100" y="266" width="34" height="50" rx="4" fill="var(--code-bg)" stroke="var(--card-border)"/>
+        <rect x="138" y="266" width="34" height="50" rx="4" fill="var(--code-bg)" stroke="var(--card-border)"/>
+        <circle cx="41" cy="276" r="3" fill="var(--accent)"/><circle cx="79" cy="276" r="3" fill="var(--accent)"/>
+        <circle cx="117" cy="276" r="3" fill="#f59e0b"/><circle cx="155" cy="276" r="3" fill="var(--accent)"/>
+        <text x="196" y="295" font-family="monospace" font-size="10" fill="var(--text-faint)">S7-1500</text>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="tag">About</span>
+      <h2>Engineer on the plant floor, developer at the keyboard.</h2>
+    </div>
+    <div class="about-grid">
+      <div class="reveal">
+        <p>
+          I'm an <strong>Electrical &amp; Electronics Engineer</strong> specialized in PLC programming, industrial
+          automation and control systems. I currently work as an Automation Engineer at
+          <strong>ITC Invest Trading &amp; Consulting AG</strong> in Ankara, where I'm responsible for the automation
+          infrastructure of a recycling and waste-processing facility — waste-to-energy production, water
+          treatment and incineration processes.
+        </p>
+        <p>
+          My background covers the full spectrum: designing <strong>press machines up to 1500 tons</strong> in EPLAN and
+          programming them on Siemens S7 platforms at Dirinler Makina, managing <strong>high-voltage systems and
+          transformer substations</strong> as an Engineering Lieutenant in the Turkish Air Force, and building
+          <strong>production web applications</strong> that our teams use every day — a live fleet route-optimization
+          platform and a facility inspection app.
+        </p>
+        <p>
+          What makes my profile a bit unusual is the combination: I'm equally comfortable writing ladder logic
+          for a sterilization machine, wiring a KEPServerEX→SQL data pipeline, and shipping a React + Node.js
+          application with real-time GPS tracking. I like owning problems end to end — from the sensor to the dashboard.
+        </p>
+      </div>
+      <div class="fact-card reveal">
+        <h3>Quick facts</h3>
+        <ul>
+          <li><span>Location</span><span>Ankara, Türkiye</span></li>
+          <li><span>Degree</span><span>B.Sc. EEE, Balıkesir University</span></li>
+          <li><span>GPA</span><span>3.39 / 4.00</span></li>
+          <li><span>Exchange</span><span>Erasmus+ · Politechnika Częstochowska 🇵🇱</span></li>
+          <li><span>Languages</span><span>Turkish (native) · English (C1)</span></li>
+          <li><span>Email</span><span><a href="mailto:berkegoktugsarili@gmail.com">berkegoktugsarili@gmail.com</a></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="alt">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="tag">Experience</span>
+      <h2>Where I've worked</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <span class="tl-date">Feb 2026 — Present</span>
+        <h3>Automation Engineer</h3>
+        <div class="tl-org">ITC Invest Trading &amp; Consulting AG · Ankara</div>
+        <ul>
+          <li>End-to-end automation responsibility for a recycling &amp; waste-processing plant: waste-to-energy, water treatment and incineration lines.</li>
+          <li>SCADA development, PLC programming and real-time industrial data management (Siemens PLCs, KEPServerEX, Microsoft SQL Server).</li>
+          <li>Built and deployed a route-optimization &amp; live fleet-tracking application used in daily logistics operations.</li>
+          <li>Industry 4.0 work: image processing and machine learning for predictive maintenance — gearbox failure-time estimation, gas-sensor fault prediction.</li>
+          <li>Full retrofit of a medical waste sterilization machine: control software rewritten from scratch and integrated into plant automation.</li>
+        </ul>
+      </div>
+      <div class="tl-item reveal">
+        <span class="tl-date">Nov 2024 — Nov 2025</span>
+        <h3>Engineering Lieutenant</h3>
+        <div class="tl-org">Turkish Air Force · Akıncı Air Base, Ankara</div>
+        <ul>
+          <li>High-voltage systems, transformer substation maintenance, lightning protection and electrical surveys for new installations.</li>
+          <li>Coordinated technical teams during field operations; all work under strict military safety standards.</li>
+          <li>In parallel: independent study on motors &amp; drives, servo control, industrial sensors and communication protocols.</li>
+        </ul>
+      </div>
+      <div class="tl-item reveal">
+        <span class="tl-date">Jul 2023 — Nov 2024</span>
+        <h3>Automation Engineer</h3>
+        <div class="tl-org">Dirinler Makina · İzmir</div>
+        <ul>
+          <li>Designed H-type and C-type press machines (63–1500 t) in EPLAN; programmed them on Siemens S7-300/1200/1500.</li>
+          <li>Commissioned servo-driven manipulators, transfer systems, die clamping, automatic stroke control and safety systems (light curtains, safety encoders, e-stop circuits).</li>
+          <li>PLC software for 3–5 axis gantry CNC machines on Sinumerik platforms; HMI development, QC documentation, fault diagnosis on the shop floor.</li>
+        </ul>
+      </div>
+      <div class="tl-item reveal">
+        <span class="tl-date">Jan 2023 — Apr 2023</span>
+        <h3>R&amp;D Engineer (Defence Industry)</h3>
+        <div class="tl-org">KZ Mechatronics · Balıkesir</div>
+        <ul>
+          <li>PCB design in Eagle/Proteus, embedded software on STM32 and Arduino, prototype validation through field and lab testing.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="tag">Projects</span>
+      <h2>Software I've built</h2>
+      <p>Production applications designed, developed and deployed end to end — currently in daily use.</p>
+    </div>
+
+    <div class="proj-featured">
+      <article class="proj-card reveal">
+        <div class="proj-art">
+          <svg viewBox="0 0 440 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fleet tracking application screen: live map with routes, vehicles and fleet panel">
+            <!-- browser window -->
+            <rect x="2" y="2" width="436" height="316" rx="14" fill="var(--card)" stroke="var(--card-border)" stroke-width="1.5"/>
+            <rect x="2" y="2" width="436" height="34" rx="14" fill="var(--code-bg)"/>
+            <rect x="2" y="22" width="436" height="14" fill="var(--code-bg)"/>
+            <circle cx="22" cy="19" r="4.5" fill="#ef4444"/><circle cx="38" cy="19" r="4.5" fill="#f59e0b"/><circle cx="54" cy="19" r="4.5" fill="var(--accent)"/>
+            <rect x="120" y="9" width="200" height="20" rx="10" fill="var(--card)" stroke="var(--card-border)"/>
+            <text x="220" y="23" text-anchor="middle" font-family="monospace" font-size="10" fill="var(--text-faint)">fleet.itc.local/tracking</text>
+            <!-- sidebar -->
+            <rect x="2" y="36" width="58" height="282" fill="var(--code-bg)"/>
+            <rect x="14" y="50" width="34" height="34" rx="9" fill="var(--accent)"/>
+            <text x="31" y="72" text-anchor="middle" font-size="15" fill="#fff">🚛</text>
+            <rect x="14" y="102" width="34" height="8" rx="4" fill="var(--text-faint)" opacity="0.5"/>
+            <rect x="10" y="122" width="42" height="26" rx="8" fill="var(--accent-soft)" stroke="var(--accent)"/>
+            <rect x="18" y="132" width="26" height="6" rx="3" fill="var(--accent-strong)"/>
+            <rect x="14" y="162" width="34" height="8" rx="4" fill="var(--text-faint)" opacity="0.5"/>
+            <rect x="14" y="184" width="34" height="8" rx="4" fill="var(--text-faint)" opacity="0.5"/>
+            <rect x="14" y="206" width="34" height="8" rx="4" fill="var(--text-faint)" opacity="0.5"/>
+            <!-- map canvas -->
+            <g stroke="var(--card-border)" stroke-width="1" opacity="0.55">
+              <line x1="60" y1="90" x2="438" y2="90"/><line x1="60" y1="150" x2="438" y2="150"/>
+              <line x1="60" y1="210" x2="438" y2="210"/><line x1="60" y1="270" x2="438" y2="270"/>
+              <line x1="130" y1="36" x2="130" y2="318"/><line x1="210" y1="36" x2="210" y2="318"/>
+              <line x1="290" y1="36" x2="290" y2="318"/><line x1="370" y1="36" x2="370" y2="318"/>
+            </g>
+            <!-- route with traffic colouring: green → amber → red → green -->
+            <path d="M92 286 C 130 240, 160 268, 192 214" fill="none" stroke="var(--accent)" stroke-width="5" stroke-linecap="round"/>
+            <path d="M192 214 C 214 178, 238 186, 262 160" fill="none" stroke="#f59e0b" stroke-width="5" stroke-linecap="round"/>
+            <path d="M262 160 C 282 138, 296 132, 314 118" fill="none" stroke="#ef4444" stroke-width="5" stroke-linecap="round"/>
+            <path d="M314 118 C 340 98, 368 92, 396 72" fill="none" stroke="var(--accent)" stroke-width="5" stroke-linecap="round"/>
+            <!-- alternative route -->
+            <path d="M92 286 C 180 300, 300 250, 360 160 S 390 90, 396 72" fill="none" stroke="#0ea5e9" stroke-width="2.5" stroke-dasharray="6 6" opacity="0.65"/>
+            <!-- depot + stops -->
+            <circle cx="92" cy="286" r="11" fill="var(--accent-strong)"/>
+            <text x="92" y="291" text-anchor="middle" font-size="11" fill="#fff" font-weight="bold">D</text>
+            <circle cx="192" cy="214" r="8" fill="#0ea5e9"/><text x="192" y="218" text-anchor="middle" font-size="9" fill="#fff">1</text>
+            <circle cx="262" cy="160" r="8" fill="#0ea5e9"/><text x="262" y="164" text-anchor="middle" font-size="9" fill="#fff">2</text>
+            <circle cx="396" cy="72" r="8" fill="#f59e0b"/><text x="396" y="76" text-anchor="middle" font-size="9" fill="#fff">3</text>
+            <!-- vehicles -->
+            <g transform="translate(228,192) rotate(-34)">
+              <rect x="-15" y="-9" width="30" height="18" rx="4" fill="var(--accent)"/>
+              <rect x="9" y="-6" width="9" height="12" rx="2" fill="var(--accent-strong)"/>
+            </g>
+            <circle cx="228" cy="192" r="22" fill="var(--accent)" opacity="0.15"/>
+            <g transform="translate(330,236) rotate(12)">
+              <rect x="-13" y="-8" width="26" height="16" rx="4" fill="#0ea5e9"/>
+              <rect x="8" y="-5" width="8" height="10" rx="2" fill="#0369a1"/>
+            </g>
+            <!-- ETA tooltip -->
+            <rect x="150" y="120" width="126" height="40" rx="9" fill="var(--card)" stroke="var(--accent)"/>
+            <text x="213" y="137" text-anchor="middle" font-family="monospace" font-size="10.5" fill="var(--accent-strong)">06 ABC 123 · ETA 12 dk</text>
+            <text x="213" y="152" text-anchor="middle" font-family="monospace" font-size="9" fill="var(--text-faint)">stop 2/3 · +4 dk traffic</text>
+            <!-- live badge -->
+            <rect x="366" y="46" width="62" height="22" rx="11" fill="var(--accent-soft)" stroke="var(--accent)"/>
+            <circle cx="380" cy="57" r="4" fill="var(--accent)"/>
+            <text x="404" y="61" text-anchor="middle" font-family="monospace" font-size="10" fill="var(--accent-strong)">LIVE</text>
+            <!-- fleet panel -->
+            <rect x="72" y="46" width="122" height="64" rx="10" fill="var(--card)" stroke="var(--card-border)"/>
+            <text x="82" y="63" font-family="monospace" font-size="9.5" fill="var(--text-faint)">FLEET · fill rate</text>
+            <text x="82" y="80" font-family="monospace" font-size="9.5" fill="var(--text-soft)">06 ABC 123</text>
+            <rect x="82" y="85" width="70" height="6" rx="3" fill="var(--code-bg)"/>
+            <rect x="82" y="85" width="48" height="6" rx="3" fill="var(--accent)"/>
+            <text x="184" y="92" text-anchor="end" font-family="monospace" font-size="9" fill="var(--accent-strong)">68%</text>
+            <text x="82" y="103" font-family="monospace" font-size="9.5" fill="var(--text-soft)">06 XYZ 456</text>
+            <rect x="82" y="106" width="70" height="5" rx="2.5" fill="var(--code-bg)"/>
+            <rect x="82" y="106" width="29" height="5" rx="2.5" fill="#0ea5e9"/>
+          </svg>
+        </div>
+        <div class="proj-body">
+          <span class="role">Full-stack · in production</span>
+          <h3>Fleet Route Optimization &amp; Live Tracking Platform</h3>
+          <p>
+            An end-to-end logistics platform for a collection fleet: managers define locations and jobs, the
+            system builds traffic-aware routes, drivers follow them on an installable mobile app, and every
+            vehicle is watched live on a single map.
+          </p>
+          <ul>
+            <li>Routing engine with a resilient provider chain — live-traffic routing with automatic fallbacks, plus alternative route options like a navigation app.</li>
+            <li>Real-time GPS tracking over WebSocket, with route-deviation detection and automatic re-routing from the vehicle's actual position.</li>
+            <li>Automated SMS flow with per-stop delivery codes, role-based access (admin / manager / driver) and fleet fill-rate calculation.</li>
+            <li>Reporting with fuel-cost and CO₂ estimates, automatic monthly archives, and a driving simulator for testing.</li>
+          </ul>
+          <div class="proj-stats">
+            <div class="ps"><b>4</b><span>routing engines,<br/>auto-fallback</span></div>
+            <div class="ps"><b>1–3</b><span>traffic-aware<br/>route options</span></div>
+            <div class="ps"><b>2</b><span>automated SMS<br/>per stop</span></div>
+            <div class="ps"><b>3</b><span>user roles,<br/>one platform</span></div>
+          </div>
+          <div class="chips">
+            <span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Node.js</span>
+            <span class="chip">Express</span><span class="chip">Prisma</span><span class="chip">WebSocket</span>
+            <span class="chip">MapLibre GL</span><span class="chip">PWA</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj-card reveal">
+        <div class="proj-art">
+          <svg viewBox="0 0 440 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tablet inspection app screen with equipment checklist, photo capture and manager dashboard">
+            <!-- tablet -->
+            <rect x="14" y="12" width="252" height="296" rx="20" fill="var(--card)" stroke="var(--card-border)" stroke-width="2.5"/>
+            <rect x="30" y="30" width="220" height="30" rx="8" fill="var(--accent)"/>
+            <text x="42" y="50" font-family="monospace" font-size="12" fill="#fff" font-weight="bold">⚙ Saha Kontrol</text>
+            <circle cx="234" cy="45" r="9" fill="rgba(255,255,255,0.25)"/>
+            <text x="234" y="49" text-anchor="middle" font-size="9" fill="#fff">B</text>
+            <!-- search -->
+            <rect x="30" y="68" width="220" height="24" rx="12" fill="var(--code-bg)" stroke="var(--card-border)"/>
+            <text x="44" y="84" font-family="monospace" font-size="10" fill="var(--text-faint)">🔍 KKS / equipment…</text>
+            <!-- equipment rows: score pills 100 / 50 / 0 -->
+            <g font-family="monospace" font-size="10">
+              <rect x="30" y="100" width="220" height="34" rx="8" fill="var(--accent-soft)" stroke="var(--accent)"/>
+              <text x="40" y="115" fill="var(--text)">Pump P-102</text>
+              <text x="40" y="128" font-size="8" fill="var(--text-faint)">10ABC01AP001 · pump station</text>
+              <rect x="204" y="108" width="38" height="18" rx="9" fill="var(--accent)"/>
+              <text x="223" y="121" text-anchor="middle" fill="#fff">100</text>
+              <rect x="30" y="140" width="220" height="34" rx="8" fill="var(--code-bg)" stroke="var(--card-border)"/>
+              <text x="40" y="155" fill="var(--text)">Motor M-208</text>
+              <text x="40" y="168" font-size="8" fill="var(--text-faint)">10ABC02AM008 · conveyor line</text>
+              <rect x="204" y="148" width="38" height="18" rx="9" fill="#f59e0b"/>
+              <text x="223" y="161" text-anchor="middle" fill="#fff">50</text>
+              <rect x="30" y="180" width="220" height="34" rx="8" fill="var(--code-bg)" stroke="var(--card-border)"/>
+              <text x="40" y="195" fill="var(--text)">Panel MCC-3</text>
+              <text x="40" y="208" font-size="8" fill="var(--text-faint)">10ABC03GH003 · MCC room</text>
+              <rect x="204" y="188" width="38" height="18" rx="9" fill="#ef4444"/>
+              <text x="223" y="201" text-anchor="middle" fill="#fff">0</text>
+            </g>
+            <!-- photo strip -->
+            <rect x="30" y="222" width="52" height="40" rx="6" fill="var(--code-bg)" stroke="var(--card-border)"/>
+            <path d="M34 254 l14 -14 10 9 8 -8 12 13" fill="none" stroke="var(--text-faint)" stroke-width="2"/>
+            <circle cx="44" cy="232" r="3.5" fill="var(--text-faint)"/>
+            <rect x="88" y="222" width="52" height="40" rx="6" fill="var(--code-bg)" stroke="var(--card-border)"/>
+            <path d="M92 254 l12 -12 9 8 9 -10 14 14" fill="none" stroke="var(--text-faint)" stroke-width="2"/>
+            <rect x="146" y="222" width="52" height="40" rx="6" fill="var(--accent-soft)" stroke="var(--accent)" stroke-dasharray="4 3"/>
+            <circle cx="172" cy="238" r="9" fill="none" stroke="var(--accent-strong)" stroke-width="2"/>
+            <circle cx="172" cy="238" r="3.5" fill="var(--accent-strong)"/>
+            <text x="172" y="257" text-anchor="middle" font-family="monospace" font-size="7.5" fill="var(--accent-strong)">+ photo</text>
+            <text x="224" y="245" text-anchor="middle" font-family="monospace" font-size="8" fill="var(--text-faint)">saved by
+              <tspan x="224" dy="10">KKS code</tspan></text>
+            <!-- offline sync bar -->
+            <rect x="30" y="270" width="220" height="24" rx="12" fill="var(--code-bg)" stroke="var(--card-border)"/>
+            <circle cx="46" cy="282" r="5" fill="#f59e0b"/>
+            <text x="58" y="286" font-family="monospace" font-size="9.5" fill="var(--text-soft)">offline · 3 queued, will sync ⟳</text>
+            <!-- manager dashboard card -->
+            <rect x="282" y="52" width="146" height="216" rx="14" fill="var(--card)" stroke="var(--card-border)"/>
+            <text x="296" y="76" font-family="monospace" font-size="9.5" fill="var(--text-faint)">MANAGER DASHBOARD</text>
+            <!-- donut 87% -->
+            <circle cx="355" cy="128" r="34" fill="none" stroke="var(--code-bg)" stroke-width="10"/>
+            <circle cx="355" cy="128" r="34" fill="none" stroke="var(--accent)" stroke-width="10"
+                    stroke-dasharray="186 214" stroke-linecap="round" transform="rotate(-90 355 128)"/>
+            <text x="355" y="126" text-anchor="middle" font-family="monospace" font-size="16" fill="var(--accent-strong)" font-weight="bold">87%</text>
+            <text x="355" y="141" text-anchor="middle" font-family="monospace" font-size="7.5" fill="var(--text-faint)">weighted score</text>
+            <!-- bars per area -->
+            <g font-family="monospace" font-size="8.5">
+              <text x="296" y="188" fill="var(--text-soft)">Pump st.</text>
+              <rect x="296" y="192" width="118" height="6" rx="3" fill="var(--code-bg)"/>
+              <rect x="296" y="192" width="104" height="6" rx="3" fill="var(--accent)"/>
+              <text x="296" y="212" fill="var(--text-soft)">Conveyor</text>
+              <rect x="296" y="216" width="118" height="6" rx="3" fill="var(--code-bg)"/>
+              <rect x="296" y="216" width="72" height="6" rx="3" fill="#f59e0b"/>
+              <text x="296" y="236" fill="var(--text-soft)">MCC room</text>
+              <rect x="296" y="240" width="118" height="6" rx="3" fill="var(--code-bg)"/>
+              <rect x="296" y="240" width="38" height="6" rx="3" fill="#ef4444"/>
+            </g>
+            <text x="296" y="260" font-family="monospace" font-size="8" fill="var(--text-faint)">priority list · Excel export</text>
+            <!-- export arrow tablet -> dashboard -->
+            <path d="M268 160 h10" stroke="var(--accent)" stroke-width="2" stroke-dasharray="3 3"/>
+          </svg>
+        </div>
+        <div class="proj-body">
+          <span class="role">Full-stack · in production</span>
+          <h3>Saha Kontrol — Facility Inspection PWA</h3>
+          <p>
+            A tablet application that replaced manual Excel inspection forms across multiple industrial
+            facilities covering thousands of equipment items. Field technicians score equipment, take photos
+            and sync — even with no connection.
+          </p>
+          <ul>
+            <li>Offline-first PWA: inspections queue in IndexedDB and sync automatically when the tablet is back online.</li>
+            <li>Weighted scoring engine reproducing the legacy Excel evaluation exactly, plus one-click export back into the official Excel template.</li>
+            <li>Photo capture automatically filed by equipment KKS code; manager dashboard with KPIs, area×criteria matrix and a prioritized action list.</li>
+            <li>Self-managed HTTPS PKI (persistent root CA, auto-renewing server certificates) so tablets connect securely on any network; hardened TLS front-layer under load.</li>
+          </ul>
+          <div class="proj-stats">
+            <div class="ps"><b>5</b><span>facilities<br/>in daily use</span></div>
+            <div class="ps"><b>4,700+</b><span>equipment items<br/>tracked</span></div>
+            <div class="ps"><b>100%</b><span>works fully<br/>offline</span></div>
+            <div class="ps"><b>60+</b><span>concurrent tablets,<br/>load-tested</span></div>
+          </div>
+          <div class="chips">
+            <span class="chip">Python</span><span class="chip">Flask</span><span class="chip">SQLite</span>
+            <span class="chip">PWA</span><span class="chip">IndexedDB</span><span class="chip">TLS / PKI</span>
+            <span class="chip">Linux</span>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="proj-small-grid">
+      <article class="proj-small reveal">
+        <div class="icon">📡</div>
+        <h3>LoRaWAN PLC Telemetry</h3>
+        <p>Graduation project: a long-range (up to 15 km) PLC-to-PLC link with no network infrastructure. A Siemens S7-1200 reads boiler-room temperatures 5 km away over LoRaWAN + Modbus and drives a fire-sprinkler system in real time.</p>
+        <div class="chips"><span class="chip">S7-1200</span><span class="chip">LoRaWAN</span><span class="chip">Modbus</span></div>
+      </article>
+      <article class="proj-small reveal">
+        <div class="icon">🤖</div>
+        <h3>Predictive Maintenance ML</h3>
+        <p>Machine-learning models on real plant data: gearbox failure-time estimation and gas-sensor fault prediction, feeding maintenance planning before equipment actually fails.</p>
+        <div class="chips"><span class="chip">Python</span><span class="chip">ML</span><span class="chip">Industrial data</span></div>
+      </article>
+      <article class="proj-small reveal">
+        <div class="icon">🗄️</div>
+        <h3>Plant Data Pipeline</h3>
+        <p>PLC → KEPServerEX → SQL Server architecture collecting, structuring and delivering field data to reports and monitoring dashboards — the backbone for data-driven decisions at the facility.</p>
+        <div class="chips"><span class="chip">KEPServerEX</span><span class="chip">SQL Server</span><span class="chip">OPC</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="automation" class="alt">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="tag">Automation &amp; SCADA</span>
+      <h2>Work on the plant floor</h2>
+      <p>The industrial side of what I do — controls, drives, data and commissioning.</p>
+    </div>
+    <div class="auto-grid">
+      <div class="auto-card reveal">
+        <div class="icon">🧪</div>
+        <h3>Biogas, Digesters &amp; H₂S Gas Treatment</h3>
+        <p>Hands-on commissioning experience with anaerobic digestion and biogas process control, including H₂S removal / gas-cleaning lines and the associated safety and gas-handling logic — a specialised skill set that maps directly to biogas, biomethane and waste-to-energy plants.</p>
+      </div>
+      <div class="auto-card reveal">
+        <div class="icon">💧</div>
+        <h3>Water &amp; Wastewater Treatment</h3>
+        <p>Automation and commissioning across water-treatment processes — pre-treatment, physical, biological and chemical stages — with PLC control, SCADA supervision and instrumentation for pumps, blowers, analyzers and dosing systems.</p>
+      </div>
+      <div class="auto-card reveal">
+        <div class="icon">🏭</div>
+        <h3>Waste-to-Energy Plant Automation</h3>
+        <p>End-to-end automation responsibility at a recycling &amp; waste-processing facility: waste-to-energy production, water treatment and incineration lines — PLC programming, SCADA and real-time troubleshooting across the plant.</p>
+      </div>
+      <div class="auto-card reveal">
+        <div class="icon">🖥️</div>
+        <h3>SCADA &amp; Data Historians</h3>
+        <p>WinCC Runtime Professional applications: operator screens, alarming, trend pop-ups and logging-tag archives — e.g. hourly-average flow archives built with cycle-based mean-value logging for clean long-term reporting.</p>
+      </div>
+      <div class="auto-card reveal">
+        <div class="icon">♻️</div>
+        <h3>Retrofit &amp; Commissioning</h3>
+        <p>Brought a medical waste sterilization machine back to life by writing its entire control software from scratch and integrating it into plant automation. Background in commissioning presses, CNC machines and servo-driven subsystems.</p>
+      </div>
+      <div class="auto-card reveal">
+        <div class="icon">⚡</div>
+        <h3>Drives &amp; Motion</h3>
+        <p>Asynchronous motors and drive systems: SINAMICS V20 / G120 commissioning and parameterization, working knowledge of ABB ACS-series industrial drives; servo manipulators, safety encoders, light curtains and safety-rated control logic.</p>
+      </div>
+      <div class="auto-card reveal">
+        <div class="icon">🔗</div>
+        <h3>Industrial Connectivity</h3>
+        <p>PROFINET and Modbus networks, OPC connectivity with KEPServerEX bridging Siemens PLCs to Microsoft SQL Server — plus unconventional links like LoRaWAN telemetry where no network exists.</p>
+      </div>
+      <div class="auto-card reveal">
+        <div class="icon">🛡️</div>
+        <h3>High Voltage &amp; Electrical</h3>
+        <p>EMO-certified operation responsibility for high-voltage facilities. Hands-on experience with transformer substations, lightning protection and electrical surveys; electrical design in EPLAN.</p>
+      </div>
+    </div>
+
+    <div class="cap-strip reveal">
+      <h3>What I can take on</h3>
+      <ul>
+        <li>Biogas / anaerobic digestion &amp; H₂S gas-treatment commissioning</li>
+        <li>Water &amp; wastewater treatment process automation</li>
+        <li>PLC programs from scratch — Siemens S7-300 / 1200 / 1500, safety logic included</li>
+        <li>SCADA / HMI design and data archiving (WinCC, WinCC RT Professional)</li>
+        <li>KEPServerEX ↔ SQL Server data pipelines, reporting and dashboards</li>
+        <li>Machine retrofits: reverse-engineering and rewriting control software</li>
+        <li>Drive commissioning and motor control (SINAMICS V20 / G120)</li>
+        <li>Electrical project design in EPLAN</li>
+        <li>CNC support on Sinumerik ONE platforms</li>
+        <li>High-voltage facility operation responsibility (EMO certified)</li>
+        <li>Python tooling and machine learning on industrial data</li>
+        <li>Full-stack web applications for operations teams</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="tag">Skills</span>
+      <h2>Toolbox</h2>
+    </div>
+    <div class="skill-grid">
+      <div class="skill-card reveal">
+        <h3><span class="icon">🎛️</span> Automation &amp; Control</h3>
+        <div class="chips">
+          <span class="chip">TIA Portal (all versions)</span><span class="chip">S7-300/1200/1500</span>
+          <span class="chip">WinCC / RT Professional</span><span class="chip">Sinumerik ONE</span>
+          <span class="chip">LOGO! &amp; Pilz</span><span class="chip">KEPServerEX</span>
+          <span class="chip">SINAMICS V20/G120</span><span class="chip">PROFINET · Modbus</span>
+          <span class="chip">HMI &amp; SCADA design</span><span class="chip">EPLAN Electric</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h3><span class="icon">💻</span> Software &amp; Data</h3>
+        <div class="chips">
+          <span class="chip">Python</span><span class="chip">TypeScript / JavaScript</span>
+          <span class="chip">React</span><span class="chip">Node.js</span>
+          <span class="chip">SQL Server · SQLite</span><span class="chip">Machine Learning</span>
+          <span class="chip">Image Processing</span><span class="chip">WebSocket</span>
+          <span class="chip">PWA</span><span class="chip">Linux</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h3><span class="icon">🔌</span> Electrical &amp; Embedded</h3>
+        <div class="chips">
+          <span class="chip">High-voltage operations</span><span class="chip">Transformer substations</span>
+          <span class="chip">STM32</span><span class="chip">Arduino / C++</span>
+          <span class="chip">PCB (Eagle · Proteus)</span><span class="chip">Hydraulics &amp; Pneumatics</span>
+          <span class="chip">Safety systems</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="certificates" class="alt">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="tag">Certificates</span>
+      <h2>Selected certificates &amp; training</h2>
+    </div>
+    <div class="cert-grid reveal">
+      <div class="cert"><b>Operation Responsibility in High Voltage Facilities</b><span>EMO · 2025</span></div>
+      <div class="cert"><b>Industrial Communication &amp; Cybersecurity in Automation</b><span>2025</span></div>
+      <div class="cert"><b>PLC Training</b><span>Ministry of National Education · 2025</span></div>
+      <div class="cert"><b>Internet of Things (IoT)</b><span>Ministry of National Education · 2025</span></div>
+      <div class="cert"><b>Object-Oriented Programming with Python</b><span>Gazi University · 2025</span></div>
+      <div class="cert"><b>EPLAN Training</b><span>2025</span></div>
+      <div class="cert"><b>English Proficiency C1 (Erasmus+)</b><span>2020</span></div>
+      <div class="cert"><b>Authorized Boiler Operator License</b><span>Ministry of National Education · 2025</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="blog-preview">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="tag">Blog</span>
+      <h2>Notes from the field</h2>
+      <p>Occasional write-ups on automation, industrial data and the software I build around them.</p>
+    </div>
+    <div class="post-list reveal">
+      <a class="post-item" href="blog/route-optimization-platform.html">
+        <span class="date">August 2026</span>
+        <h3>Building a live fleet-tracking and route-optimization platform from scratch</h3>
+        <p>How I combined a traffic-aware routing chain, WebSocket GPS tracking and an installable PWA into one logistics platform — and what industrial automation taught me about building resilient software.</p>
+        <span class="read">Read the post →</span>
+      </a>
+    </div>
+    <p class="reveal" style="margin-top:18px"><a href="blog/index.html">All posts →</a></p>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="contact-card reveal">
+      <h2>Let's build something.</h2>
+      <p>
+        Whether it's a PLC panel that needs a brain, plant data that needs a dashboard, or an idea that
+        needs software — I'm happy to talk.
+      </p>
+      <div class="contact-links">
+        <a class="btn btn-white" href="mailto:berkegoktugsarili@gmail.com">✉️ berkegoktugsarili@gmail.com</a>
+        <a class="btn btn-outline" href="https://www.linkedin.com/in/berkegoktugsarili/" target="_blank" rel="noopener">in · LinkedIn</a>
+        <a class="btn btn-outline" href="https://github.com/berkegoktugsarili" target="_blank" rel="noopener">⌨ GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© <span id="year"></span> Berke Göktuğ Sarılı</span>
+    <span>Automation Engineer · Ankara, Türkiye</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
