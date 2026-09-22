@@ -17,36 +17,38 @@ js/main.js                          Tema düğmesi, mobil menü, scroll animasyo
 
 `index.html` dosyasına çift tıklaman yeterli (sunucu gerekmez).
 
-## GitHub Pages'te yayınlama (ücretsiz)
+## Yayın adresi
 
-1. [github.com](https://github.com) hesabınla giriş yap → **New repository**.
-   - Repo adını **`KULLANICIADIN.github.io`** yaparsan site doğrudan `https://KULLANICIADIN.github.io`
-     adresinde yayınlanır (önerilen). Farklı bir ad verirsen adres
-     `https://KULLANICIADIN.github.io/repo-adi` olur.
-2. Dosyaları yükle — iki yol var:
-   - **Git olmadan (en kolay):** Repo sayfasında **"uploading an existing file"** linkine tıkla,
-     bu klasördeki TÜM dosya ve klasörleri pencereye sürükle-bırak → Commit. (Bu bilgisayarda git
-     kurulu değil; bu yöntem için gerekmiyor da.)
-   - **Git ile:** Önce `winget install Git.Git` ile git kur, sonra bu klasörde:
-     ```powershell
-     git init -b main; git add -A; git commit -m "ilk surum"
-     git remote add origin https://github.com/KULLANICIADIN/KULLANICIADIN.github.io.git
-     git push -u origin main
-     ```
-3. GitHub'da repo → **Settings → Pages** → "Deploy from a branch" → Branch: **main**, klasör: **/ (root)** → Save.
-4. 1-2 dakika içinde site yayında. Sonraki değişikliklerde aynı yoldan dosyayı tekrar yüklemen
-   (veya git ile push etmen) yeterli.
+**https://berkegoktugsarili.github.io** (GitHub kullanıcısı: `berkegoktugsarili`)
 
-## Yapılacaklar / kişiselleştirme
+Depo git ile hazırlandı (bu klasör `git init` + commit edilmiş). Yayın için repo adı
+**`berkegoktugsarili.github.io`** olmalı (kullanıcı-sitesi → kök adres, Pages otomatik açılır).
 
-- [ ] `index.html` içindeki iletişim bölümünde yorum satırına alınmış **LinkedIn / GitHub** linklerini
-      kendi profillerinle açıp doldur.
-- [ ] İstersen proje kartlarındaki SVG illüstrasyonları gerçek ekran görüntüleriyle değiştir
-      (görselleri `img/` klasörüne koy, `<div class="proj-art">` içindeki `<svg>` yerine `<img>` koy).
-- [ ] Yeni blog yazısı eklemek için: `blog/route-optimization-platform.html` dosyasını kopyala,
-      içeriği değiştir, `blog/index.html` ve ana sayfadaki listeye kart ekle.
-- [ ] Kendi alan adın olursa (örn. `berkesarili.com`): repo köküne içinde alan adı yazan `CNAME`
-      dosyası ekle + alan adı sağlayıcında GitHub Pages DNS kayıtlarını gir.
+### Yol 1 — gh CLI ile (kurulduysa, tek komut zinciri)
+```powershell
+cd "C:\Users\berke.sarili\Desktop\kendi uygulamalarım\KISISEL-SITE"
+gh auth login                       # tek sefer, tarayıcı ile giriş
+gh repo create berkegoktugsarili/berkegoktugsarili.github.io --public --source=. --push
+```
+Kullanıcı-sitesinde (`kullanici.github.io`) Pages otomatik main koluyla yayına girer; birkaç dakikada canlı.
+
+### Yol 2 — sadece git (gh yoksa)
+GitHub'da elle `berkegoktugsarili.github.io` adında **public** repo aç, sonra:
+```powershell
+cd "C:\Users\berke.sarili\Desktop\kendi uygulamalarım\KISISEL-SITE"
+git remote add origin https://github.com/berkegoktugsarili/berkegoktugsarili.github.io.git
+git push -u origin main
+```
+Sonraki güncellemeler: `git add -A; git commit -m "..."; git push`.
+
+## SEO (eklendi)
+- `index.html`: canonical + Open Graph + Twitter Card + JSON-LD (Person) → LinkedIn/Google paylaşımlarında `og.png` önizlemesi çıkar.
+- `og.png` (1200×630), `sitemap.xml`, `robots.txt` hazır.
+
+## İsteğe bağlı yapılacaklar
+- [ ] Proje kartlarındaki SVG mockup'ları gerçek ekran görüntüleriyle değiştir (`img/` + `<img>`).
+- [ ] Türkçe sürüm (şu an İngilizce).
+- [ ] Kendi alan adın (`berkesarili.com`) → repo köküne `CNAME` + DNS kayıtları.
 
 ## Notlar
 
