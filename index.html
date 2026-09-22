@@ -101,7 +101,7 @@
       <div class="hero-stats">
         <div class="stat"><b>3+ yrs</b><span>industrial automation</span></div>
         <div class="stat"><b>63–1500 t</b><span>press machines commissioned</span></div>
-        <div class="stat"><b>2 apps</b><span>built &amp; running in production</span></div>
+        <div class="stat"><b>3 apps</b><span>built &amp; running in production</span></div>
         <div class="stat"><b>15 km</b><span>LoRaWAN PLC telemetry link</span></div>
       </div>
     </div>
@@ -456,15 +456,21 @@
       </article>
       <article class="proj-small reveal">
         <div class="icon">🤖</div>
-        <h3>Predictive Maintenance ML</h3>
-        <p>Machine-learning models on real plant data: gearbox failure-time estimation and gas-sensor fault prediction, feeding maintenance planning before equipment actually fails.</p>
-        <div class="chips"><span class="chip">Python</span><span class="chip">ML</span><span class="chip">Industrial data</span></div>
+        <h3>Predictive Maintenance &amp; Fault Diagnosis (ML)</h3>
+        <p>Ongoing at ITC: machine-learning on real plant-historian data for early fault diagnosis of motors and gearboxes — current-signature anomaly detection (peer-deviation, Isolation Forest, autoencoder), gearbox failure-time estimation and gas-sensor fault prediction — flagging problems before equipment fails.</p>
+        <div class="chips"><span class="chip">Python</span><span class="chip">ML</span><span class="chip">Anomaly detection</span><span class="chip">SQL historian</span></div>
       </article>
       <article class="proj-small reveal">
         <div class="icon">🗄️</div>
         <h3>Plant Data Pipeline</h3>
         <p>PLC → KEPServerEX → SQL Server architecture collecting, structuring and delivering field data to reports and monitoring dashboards — the backbone for data-driven decisions at the facility.</p>
         <div class="chips"><span class="chip">KEPServerEX</span><span class="chip">SQL Server</span><span class="chip">OPC</span></div>
+      </article>
+      <article class="proj-small reveal">
+        <div class="icon">🗺️</div>
+        <h3>Electrical Panel Layout Tool</h3>
+        <p>A web app for panel-assembly teams: true-to-scale (mm) drag-and-drop placement of components on DIN rails and plates, an automatic layout-suggestion engine, and printable PDF output — turning a manual task into a fast, repeatable one.</p>
+        <div class="chips"><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">PDF</span></div>
       </article>
     </div>
   </div>
@@ -496,22 +502,27 @@
       <div class="auto-card reveal">
         <div class="icon">🖥️</div>
         <h3>SCADA &amp; Data Historians</h3>
-        <p>WinCC Runtime Professional applications: operator screens, alarming, trend pop-ups and logging-tag archives — e.g. hourly-average flow archives built with cycle-based mean-value logging for clean long-term reporting.</p>
+        <p>WinCC Runtime Professional applications: operator screens, alarming, trend pop-ups and logging-tag archives — e.g. hourly-average flow archives via cycle-based mean-value logging. Also <strong>modifying and extending existing SCADA/software</strong> across plants — new screens, alarms, reports and control-logic revisions on live systems.</p>
       </div>
       <div class="auto-card reveal">
         <div class="icon">♻️</div>
-        <h3>Retrofit &amp; Commissioning</h3>
-        <p>Brought a medical waste sterilization machine back to life by writing its entire control software from scratch and integrating it into plant automation. Background in commissioning presses, CNC machines and servo-driven subsystems.</p>
+        <h3>Machine Control Software — Built from Scratch</h3>
+        <p>Wrote the complete control software from scratch for a <strong>medical-waste sterilization machine and its shredder/crusher</strong> (Siemens TIA Portal + WinCC RT Professional): full cycle logic, safety interlocks and <strong>automated PDF cycle-report generation</strong> for regulatory traceability. Also delivered a solid-polymer dosing system revision; background in commissioning presses, CNC machines and servo-driven subsystems.</p>
+      </div>
+      <div class="auto-card reveal">
+        <div class="icon">🛠️</div>
+        <h3>Plant Support: SCADA/PLC Troubleshooting &amp; CPU Migration</h3>
+        <p>Day-to-day support across large ITC plants: diagnosing and resolving SCADA and PLC faults in real time to keep production running, plus PLC <strong>CPU migration/upgrade</strong> projects in TIA Portal (e.g. moving to newer S7-1500 controllers) with minimal downtime.</p>
       </div>
       <div class="auto-card reveal">
         <div class="icon">⚡</div>
         <h3>Drives &amp; Motion</h3>
-        <p>Asynchronous motors and drive systems: SINAMICS V20 / G120 commissioning and parameterization, working knowledge of ABB ACS-series industrial drives; servo manipulators, safety encoders, light curtains and safety-rated control logic.</p>
+        <p>Asynchronous motors and drive systems: SINAMICS V20 / G120 and <strong>ABB (ACS) drive commissioning</strong> — including Ethernet/PROFINET fieldbus adapters (FENA-21): protocol-profile and IP parameterization, Accessible-Devices diagnosis and fault-finding. Also servo manipulators, safety encoders, light curtains and safety-rated control logic.</p>
       </div>
       <div class="auto-card reveal">
         <div class="icon">🔗</div>
-        <h3>Industrial Connectivity</h3>
-        <p>PROFINET and Modbus networks, OPC connectivity with KEPServerEX bridging Siemens PLCs to Microsoft SQL Server — plus unconventional links like LoRaWAN telemetry where no network exists.</p>
+        <h3>Industrial Connectivity &amp; Wireless I/O</h3>
+        <p>PROFINET and Modbus networks, OPC connectivity with KEPServerEX bridging Siemens PLCs to Microsoft SQL Server. Also <strong>wireless remote analog data transfer (SMC)</strong> for hard-to-cable signals such as crane/weighing systems, wireless PROFINET on moving structures, and LoRaWAN telemetry where no network exists. Secure remote access with <strong>SCALANCE S615 routers + NAT routing</strong>, and WinCC <strong>Web Navigator / SmartClient</strong> for remote SCADA monitoring.</p>
       </div>
       <div class="auto-card reveal">
         <div class="icon">🛡️</div>
