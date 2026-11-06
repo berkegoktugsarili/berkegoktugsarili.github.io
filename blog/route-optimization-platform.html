@@ -62,8 +62,8 @@
   </p>
   <p>
     The result is a platform that is now part of daily operations: managers create collection jobs,
-    the system builds a traffic-aware route, every vehicle is tracked live on one map, and each
-    location automatically gets an SMS when the vehicle departs and again shortly before it arrives.
+    the system builds a traffic-aware route, every vehicle is tracked live on one map, and drivers
+    record what they collect at each stop from their phone.
     Here is a tour of the interesting engineering decisions.
   </p>
 
@@ -107,15 +107,18 @@
     </li>
   </ul>
 
-  <h2>The SMS choreography</h2>
+  <h2>GPS that keeps working without signal</h2>
   <p>
-    Each stop gets two messages: one when the vehicle departs, and one roughly thirty minutes
-    before arrival — computed from the live ETA, not a fixed schedule — containing a one-time
-    delivery code. The driver confirms the code on site and records what was collected, which feeds
-    a live fill-rate calculation for the vehicle. Departure is idempotent: pressing the button twice
-    never double-sends messages. In development, the whole SMS pipeline runs in simulation mode and
-    writes to a log table instead of sending — so the full flow is testable end to end without a
-    single real message.
+    Field tests showed the real problem quickly: phones lose signal, and some kill the app in the
+    background. The app now queues positions on the phone while offline and sends them with their
+    original timestamps when the connection returns. On the server, implausible jumps are filtered,
+    the track is snapped to the road network with a self-hosted routing engine, and short gaps are
+    bridged with road geometry so the distance and fuel figures stay realistic.
+  </p>
+  <p>
+    Drivers enter how many bags they collected at each stop. That feeds a live fill rate for the
+    vehicle, and when it reaches capacity a discharge-station stop is inserted into the route
+    automatically. Reports then compare the planned route with what actually happened.
   </p>
 
   <h2>What automation engineering taught me about software</h2>
@@ -134,10 +137,10 @@
       reading a state, not divining a combination of booleans.
     </li>
     <li>
-      <strong>Simulate before you commission.</strong> The platform includes a full driving
-      simulator that replays a route with realistic timing, fires the same API calls a real phone
-      would, and triggers the same SMS logic. We "commissioned" the software the way you commission
-      a machine — in simulation first.
+      <strong>Commission in the field.</strong> The real test was driving the routes with the
+      drivers. Each field day produced a list of faults (lost GPS, stops entered from the wrong
+      place, missed returns to the depot), and each one was traced to a root cause and fixed, the
+      same way you work through punch-list items on a new machine.
     </li>
   </ul>
 
